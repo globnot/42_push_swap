@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2025/12/22 11:06:13 by aborda           ###   ########.fr        #
+#    Updated: 2025/12/22 11:17:24 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CYAN		= \033[0;36m
 RESET		= \033[0m
 
 # Project
-NAME		= push_swap.a
+NAME		= push_swap
 CC			= cc
 CFLAG		= -Wall -Wextra -Werror
 INCLUDES	= -Iincludes -I./libft/includes
