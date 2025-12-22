@@ -6,14 +6,14 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/22 14:15:54 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/22 14:36:50 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	check_args(char *argv)
+int	check_arg(char *argv)
 {
 	int	i;
 
@@ -23,14 +23,14 @@ int	check_args(char *argv)
 		ft_printf("Error: first char\n");
 		return (1);
 	}
-	else 
+	else
 	{
 		i++;
 		while (argv[i])
 		{
 			if (ft_isdigit(argv[i]) == 1)
 				i++;
-			else 
+			else
 			{
 				ft_printf("Error: following char\n");
 				return (1);
@@ -40,26 +40,32 @@ int	check_args(char *argv)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int	is_valid_args(int argc, char **argv)
 {
 	int	i;
-	int	result;
 
-	if (argc <= 1)
-		{
-			ft_printf("Invalid arguments\n");
-			return (1);
-		}
 	i = 1;
 	while (i < argc)
 	{
-		result = check_args(argv[i]);
-		if (result == 1)
-		{
-			ft_printf("Error");
-			return (1);
-		}
+		if (check_arg(argv[i]) == 1)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc <= 1)
+	{
+		ft_printf("Invalid arguments\n");
+		return (1);
+	}
+	if (is_valid_args(argc, argv))
+	{
+		ft_printf("Super\n");
+		return (0);
+		//TODO
+	}
+	return (1);
 }
