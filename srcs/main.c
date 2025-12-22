@@ -6,14 +6,14 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/22 11:04:46 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/22 11:53:51 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	ft_printf("Super");
 }

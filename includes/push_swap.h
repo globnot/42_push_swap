@@ -6,11 +6,11 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/22 11:03:44 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/22 11:43:53 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
 
 #endif
