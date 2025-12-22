@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/22 14:36:50 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/22 14:55:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int	check_arg(char *argv)
 
 	i = 0;
 	if (argv[i] != '+' && argv[i] != '-' && ft_isdigit(argv[i]) != 1)
+		return (ft_printf("Error: first char\n"), 1);
+	if (argv[i] == '+' && argv[i] == '-')
 	{
-		ft_printf("Error: first char\n");
-		return (1);
+		if (ft_isdigit(argv[i + 1]) == 0)
+			return (ft_printf("Error: + or - alone\n"), 1);
 	}
 	else
 	{
@@ -31,10 +33,7 @@ int	check_arg(char *argv)
 			if (ft_isdigit(argv[i]) == 1)
 				i++;
 			else
-			{
-				ft_printf("Error: following char\n");
-				return (1);
-			}
+				return (ft_printf("Error: following char\n"), 1);
 		}
 	}
 	return (0);
@@ -58,13 +57,11 @@ int	main(int argc, char **argv)
 {
 	if (argc <= 1)
 	{
-		ft_printf("Invalid arguments\n");
-		return (1);
+		return (ft_printf("Invalid arguments\n"), 1);
 	}
 	if (is_valid_args(argc, argv))
 	{
-		ft_printf("Super\n");
-		return (0);
+		return (ft_printf("Super\n"), 0);
 		//TODO
 	}
 	return (1);
