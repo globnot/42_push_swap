@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/22 16:13:34 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/26 15:53:21 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,6 @@ int	check_arg(char *argv)
 	}
 	return (0);
 }
-
-// int	check_double(char *argv)
-// {
-// 	int	i;
-// 	int	j;
-//
-// 	i = 0;
-// 	while (argv[i])
-// 	{
-// 		j = i + 1;
-// 		while (argv[j])
-// 		{
-// 			if (argv[i] == argv[j])
-// 				return (1);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	return (0);
-// }
 
 int	is_valid_args(int argc, char **argv)
 {
@@ -82,3 +62,23 @@ int	main(int argc, char **argv)
 // FAIRE ATOI POUR TRANSFORMER EN NOMBRE
 // GERER CA DANS UN TABLEAU
 // CHECKER LES DOUBLON DE CE TABLEAU
+
+// int	check_double(char *argv)
+// {
+// 	int	i;
+// 	int	j;
+//
+// 	i = 0;
+// 	while (argv[i])
+// 	{
+// 		j = i + 1;
+// 		while (argv[j])
+// 		{
+// 			if (argv[i] == argv[j])
+// 				return (1);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (0);
+// }
