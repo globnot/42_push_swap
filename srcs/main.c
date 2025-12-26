@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/26 15:53:21 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/26 17:53:42 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,21 @@ int	is_valid_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	int	i;
+
 	if (argc <= 1)
 	{
 		return (ft_printf("Invalid arguments\n"), 1);
 	}
 	if (is_valid_args(argc, argv))
 	{
-		return (ft_printf("Super\n"), 0);
+		i = 1;
+		while (i <= (argc - 1))
+		{
+			ft_lstnew (ft_atoi(argv[i]))
+			ft_printf("%s\n", argv[i]);
+			i++;
+		}
 		//TODO
 	}
 	return (1);
