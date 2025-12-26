@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/22 16:09:27 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/22 16:13:34 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,7 @@ int	main(int argc, char **argv)
 	}
 	return (1);
 }
+
+// FAIRE ATOI POUR TRANSFORMER EN NOMBRE
+// GERER CA DANS UN TABLEAU
+// CHECKER LES DOUBLON DE CE TABLEAU
