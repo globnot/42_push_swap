@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2025/12/22 13:44:24 by aborda           ###   ########.fr        #
+#    Updated: 2025/12/27 19:21:31 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJ_DIR		= objs
 vpath %.c srcs/
 
 # Sources
-SRCS 		= srcs/main.c
+SRCS 		= srcs/main.c srcs/parsing.c srcs/stack_utils.c
 
 # Objects
 OBJS 		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
