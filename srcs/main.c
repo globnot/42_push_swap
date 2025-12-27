@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/27 15:44:20 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/27 17:25:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,16 @@ t_node	*create_node(int number)
 
 	node = malloc(sizeof(t_node));
 	node->value = number;
-	node->next = null;
+	node->next = NULL;
 	return (node);
 }
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	t_node	*new;
+	t_node	*front;
+	t_node	*back;
 
 	if (argc <= 1)
 	{
@@ -66,15 +69,30 @@ int	main(int argc, char **argv)
 	if (is_valid_args(argc, argv))
 	{
 		i = 1;
+		new = NULL;
+		front = NULL;
+		back = NULL;
 		while (i <= (argc - 1))
 		{
-			// ft_lstnew (&(ft_atoi(argv[i])))
-			ft_printf("%s\n", argv[i]);
+			new = create_node (ft_atoi(argv[i]));
+			if (front == NULL)
+				front = new;
+			else
+			{
+				back = front;
+				while (back->next != NULL)
+					back = back->next;
+				back->next = new;
+			}
 			i++;
 		}
-		//TODO
+		while (front != NULL)
+		{
+			ft_printf("%d\n", front->value);
+			front = front->next;
+		}
 	}
-	return (1);
+	return (0);
 }
 
 // FAIRE ATOI POUR TRANSFORMER EN NOMBRE
