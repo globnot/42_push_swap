@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/26 17:53:42 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/27 15:44:20 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ int	is_valid_args(int argc, char **argv)
 	return (1);
 }
 
+t_node	*create_node(int number)
+{
+	t_node *node;
+
+	node = malloc(sizeof(t_node));
+	node->value = number;
+	node->next = null;
+	return (node);
+}
+
 int	main(int argc, char **argv)
 {
 	int	i;
@@ -58,7 +68,7 @@ int	main(int argc, char **argv)
 		i = 1;
 		while (i <= (argc - 1))
 		{
-			ft_lstnew (ft_atoi(argv[i]))
+			// ft_lstnew (&(ft_atoi(argv[i])))
 			ft_printf("%s\n", argv[i]);
 			i++;
 		}
