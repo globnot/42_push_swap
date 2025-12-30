@@ -6,17 +6,21 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/27 18:52:42 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/30 15:07:24 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// verifier les ISPACE 3
 
 int	check_arg(char *argv)
 {
 	int	i;
 
 	i = 0;
+	while ((argv[i] >= 9 && argv[i] <= 13) || (argv[i] == 32))
+		i++;
 	if (argv[i] == '+' || argv[i] == '-')
 		i++;
 	if (!ft_isdigit(argv[i]))
