@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/31 10:19:38 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/31 12:06:30 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,36 @@ void	free_split(char **split)
 		free(split[i]);
 		i++;
 	}
+	free(split);
+}
+
+int	count_args(int argc, char **argv)
+{
+	int		count_args;
+	int		i;
+	int		j;
+	char	**split;
+
+	count_args = 0;
+	i = 1;
+	while (i < argc)
+	{
+		if ((ft_strchr(argv[i], ' ')) != NULL)
+		{
+			split = ft_split(argv[i], ' ');
+			j = 0;
+			while (split[j])
+			{
+				j++;
+				count_args++;
+			}
+			free_split(split);
+		}
+		else
+			count_args++;
+		i++;
+	}
+	return (count_args);
 }
 
 int	is_valid_args(int argc, char **argv)
@@ -63,11 +93,50 @@ int	is_valid_args(int argc, char **argv)
 					return (0);
 				j++;
 			}
+			free_split(split);
 		}
 		else if (check_arg(argv[i]) == 1)
 			return (0);
 		i++;
 	}
-	free_split(split);
 	return (1);
+}
+
+char	**args_array(int argc, char **argv)
+{
+	char	**all_args;
+	int		count_args;
+	int		i;
+	int		j;
+	int		k;
+
+	count_args = count_args(argc, argv);
+	all_args = malloc(sizeof(char*) * (count_args + 1));
+	i = 1;
+	k = 0;
+	while (i < argc)
+	{
+		if ((ft_strchr(argv[i], ' ')) != NULL)
+		{
+			split = ft_split(argv[i], ' ');
+			j = 0;
+			while (split[j])
+			{
+				if (check_arg(split[j]) == 0)
+				{
+					all_args[k] = split[j];
+					k++;
+				}
+				j++;
+			}
+			free_split(split);
+		}
+		else if (check_arg(argv[i]) == 0)
+		{
+			all_args[k] = argv[i];
+			k++;
+		}
+		i++;
+	}
+	return (all_args);
 }
