@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/31 12:06:30 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/31 12:14:34 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int	is_valid_args(int argc, char **argv)
 char	**args_array(int argc, char **argv)
 {
 	char	**all_args;
+	char	**split;
 	int		count_args;
 	int		i;
 	int		j;
@@ -129,7 +130,7 @@ char	**args_array(int argc, char **argv)
 				}
 				j++;
 			}
-			free_split(split);
+			free(split);
 		}
 		else if (check_arg(argv[i]) == 0)
 		{
@@ -138,5 +139,6 @@ char	**args_array(int argc, char **argv)
 		}
 		i++;
 	}
+	all_args[k] == NULL;
 	return (all_args);
 }
