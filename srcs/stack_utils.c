@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:07:05 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/27 19:36:10 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/30 15:18:09 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ t_node	*init_stack_a(int argc, char **argv)
 	new = NULL;
 	head = NULL;
 	current = NULL;
-	while (i <= (argc - 1))
+	while (i < argc)
 	{
-		new = create_node (ft_atoi(argv[i]));
+		new = create_node(ft_atoi(argv[i]));
 		if (head == NULL)
 			head = new;
 		else

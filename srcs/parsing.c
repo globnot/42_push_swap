@@ -6,13 +6,11 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/30 15:07:24 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/31 10:19:38 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// verifier les ISPACE 3
 
 int	check_arg(char *argv)
 {
@@ -34,16 +32,42 @@ int	check_arg(char *argv)
 	return (0);
 }
 
-int	is_valid_args(int argc, char **argv)
+void	free_split(char **split)
 {
 	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+}
+
+int	is_valid_args(int argc, char **argv)
+{
+	int		i;
+	int		j;
+	char	**split;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (check_arg(argv[i]) == 1)
+		if ((ft_strchr(argv[i], ' ')) != NULL)
+		{
+			split = ft_split(argv[i], ' ');
+			j = 0;
+			while (split[j])
+			{
+				if (check_arg(split[j]) == 1)
+					return (0);
+				j++;
+			}
+		}
+		else if (check_arg(argv[i]) == 1)
 			return (0);
 		i++;
 	}
+	free_split(split);
 	return (1);
 }
