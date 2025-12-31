@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/31 12:14:34 by aborda           ###   ########.fr       */
+/*   Updated: 2025/12/31 12:15:15 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,6 @@ char	**args_array(int argc, char **argv)
 		}
 		i++;
 	}
-	all_args[k] == NULL;
+	all_args[k] = NULL;
 	return (all_args);
 }
