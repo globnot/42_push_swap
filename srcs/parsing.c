@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 13:39:56 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/01 13:57:40 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,10 @@ char	**args_array(int argc, char **argv)
 
 	args = count_args(argc, argv);
 	all_args = malloc(sizeof(char *) * (args + 1));
+	if (all_args == NULL)
+		return (NULL);
 	i = 1;
+	j = 0;
 	while (i < argc)
 	{
 		if ((ft_strchr(argv[i], ' ')) != NULL)
@@ -112,6 +115,5 @@ char	**args_array(int argc, char **argv)
 			fill_from_argv(all_args, argv[i], &j);
 		i++;
 	}
-	all_args[j] = NULL;
-	return (all_args);
+	return (all_args[j] = NULL, all_args);
 }
