@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 15:31:34 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/01 16:06:39 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char	**create_args_array(int argc, char **argv)
 	return (args_array[j] = NULL, args_array);
 }
 
-int	check_double(t_node *stack_a)
+int	is_double_args(t_node *stack_a)
 {
 	t_node	*i;
 	t_node	*j;
