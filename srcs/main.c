@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 15:27:50 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/01 15:44:45 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int argc, char **argv)
 	char	**args_array;
 
 	if (argc <= 1)
+		return (1);
+	if (!is_valid_args(argc, argv))
 		return (1);
 	args_array = create_args_array(argc, argv);
 	stack_a = init_stack_a(args_array);
