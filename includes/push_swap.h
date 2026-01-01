@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 14:06:05 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/01 15:22:32 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_node
 int			check_arg(char *argv);
 int			is_valid_args(int argc, char **argv);
 char		**create_args_array(int argc, char **argv);
+int			check_double(t_node *stack_a);
 
 // PARSING UTILS
 void		free_split(char **split);

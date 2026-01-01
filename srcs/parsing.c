@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 14:05:42 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/01 15:31:34 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ int	check_arg(char *argv)
 	if (argv[i] == '+' || argv[i] == '-')
 		i++;
 	if (!ft_isdigit(argv[i]))
-		return (ft_printf("Error: 1\n"), 1);
+		return (ft_putstr_fd("Error\n", 2), 1);
 	while (argv[i])
 	{
 		if (!ft_isdigit(argv[i]))
-			return (ft_printf("Error: 2\n"), 1);
+			return (ft_putstr_fd("Error\n", 2), 1);
 		i++;
 	}
 	return (0);
@@ -116,4 +116,24 @@ char	**create_args_array(int argc, char **argv)
 		i++;
 	}
 	return (args_array[j] = NULL, args_array);
+}
+
+int	check_double(t_node *stack_a)
+{
+	t_node	*i;
+	t_node	*j;
+
+	i = stack_a;
+	while (i != NULL)
+	{
+		j = i->next;
+		while (j != NULL)
+		{
+			if (i->value == j->value)
+				return (1);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (0);
 }
