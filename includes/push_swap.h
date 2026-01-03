@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 11:59:11 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 13:12:53 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void		free_stack(t_node *stack);
 
 // OPERATIONS
 void		sa(t_node **stack_a);
+void		sb(t_node **stack_b);
 
 #endif
