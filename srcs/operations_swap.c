@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 11:36:15 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 11:57:32 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 11:58:38 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	sa(t_node **stack_a)
 	int	tmp;
 
 	if ((*stack_a == NULL) || ((*stack_a)->next == NULL))
-		return;
-	if ((*stack_a)->next == NULL)
 		return;
 	else
 	{
