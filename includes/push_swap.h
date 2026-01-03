@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 15:07:31 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 16:19:45 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,10 @@ void		ss(t_node **stack_a, t_node **stack_b);
 void		pa(t_node **stack_a, t_node **stack_b);
 void		pb(t_node **stack_a, t_node **stack_b);
 void		ra(t_node **stack_a);
+void		rb(t_node **stack_b);
+void		rr(t_node **stack_a, t_node **stack_b);
+void		rra(t_node **stack_a);
+void		rrb(t_node **stack_b);
+void		rrr(t_node **stack_a, t_node **stack_b);
 
 #endif

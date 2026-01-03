@@ -6,13 +6,13 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 14:53:05 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 16:16:16 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 16:18:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_node **stack)
+static void	rotate(t_node **stack)
 {
 	t_node	*current;
 	t_node	*second;
