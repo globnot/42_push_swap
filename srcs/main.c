@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 16:06:51 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 11:26:42 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,26 @@ int	main(int argc, char **argv)
 	if (!is_valid_args(argc, argv))
 		return (1);
 	args_array = create_args_array(argc, argv);
-	stack_a = init_stack_a(args_array);
-	if (is_double_args(stack_a))
+	if (args_array == NULL)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
-	while (stack_a != NULL)
+	stack_a = init_stack_a(args_array);
+	if (stack_a == NULL)
 	{
-		ft_printf("%d\n", stack_a->value);
-		stack_a = stack_a->next;
+		ft_putstr_fd("Error\n", 2);
+		free(args_array);
+		return (1);
 	}
+	if (is_double_args(stack_a))
+	{
+		ft_putstr_fd("Error\n", 2);
+		free(args_array);
+		free_stack(stack_a);
+		return (1);
+	}
+	free(args_array);
+	free_stack(stack_a);
 	return (0);
 }
