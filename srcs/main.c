@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 11:26:42 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 12:58:21 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	char	**args_array;
+	t_node	*tmp;
 
 	if (argc <= 1)
 		return (1);
@@ -28,6 +29,17 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	stack_a = init_stack_a(args_array);
+
+	// **********TEST***********
+	sa(&stack_a);
+	tmp = stack_a;
+	 while (tmp != NULL)
+	 {
+		ft_printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	 }
+	/////////////////////////////
+	
 	if (stack_a == NULL)
 	{
 		ft_putstr_fd("Error\n", 2);
