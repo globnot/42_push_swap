@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 13:12:31 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 15:07:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	stack_a = init_stack_a(args_array);
 
 	// **********TEST***********
-	sb(&stack_a);
+	ra(&stack_a);
 	tmp = stack_a;
 	 while (tmp != NULL)
 	 {

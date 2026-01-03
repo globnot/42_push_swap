@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/03 12:00:12 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/03 14:53:37 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ vpath %.c srcs/
 
 # Sources
 SRCS 		= srcs/main.c srcs/parsing.c srcs/stack_utils.c \
-			  srcs/parsing_utils.c srcs/operations_swap.c
+			  srcs/parsing_utils.c srcs/operations_swap.c \
+			  srcs/operations_push.c srcs/operations_rotate.c
 
 # Objects
 OBJS 		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
