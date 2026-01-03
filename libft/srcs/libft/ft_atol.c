@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 12:37:25 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 09:08:47 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/03 08:59:44 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/03 09:11:18 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+long	ft_atol(const char *s)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -38,5 +38,5 @@ int	ft_atoi(const char *s)
 		}
 		return (result * sign);
 	}
-	return (0);
+	return (sign * result);
 }

@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 10:00:00 by student           #+#    #+#              #
-#    Updated: 2025/12/21 12:24:01 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/03 09:08:11 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,9 @@ SRC_BONUS	= srcs/libft/ft_lstnew_bonus.c srcs/libft/ft_lstadd_front_bonus.c \
 			srcs/libft/ft_lstmap_bonus.c
 
 SRC_PERSO	= srcs/libft/ft_intlen.c srcs/libft/ft_longlen.c \
-			srcs/libft/ft_unsignedint_len.c srcs/libft/ft_putunsignedint_fd.c
+			srcs/libft/ft_unsignedint_len.c srcs/libft/ft_putunsignedint_fd.c \
+			srcs/libft/ft_isspace.c srcs/libft/ft_is_valid_int.c \
+			srcs/libft/ft_atol.c
 
 SRC_PRINTF	= srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
 			srcs/ft_printf/ft_print_str.c srcs/ft_printf/ft_print_pointer.c \

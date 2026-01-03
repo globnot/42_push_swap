@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:45:41 by aborda            #+#    #+#             */
-/*   Updated: 2025/12/21 10:38:50 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 09:14:35 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,9 @@ int			ft_intlen(int d);
 int			ft_longlen(long d);
 int			ft_unsignedint_len(unsigned int d);
 void		ft_putunsignedint_fd(unsigned int n, int fd);
+int			ft_isspace(char c);
+int			ft_is_valid_int(const char *s);
+long		ft_atol(const char *s);
 
 // FT_PRINTF
 int			ft_printf(const char *format, ...);

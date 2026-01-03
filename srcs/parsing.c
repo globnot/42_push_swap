@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 16:06:39 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 09:40:07 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	check_arg(char *argv)
 	int	i;
 
 	i = 0;
-	while ((argv[i] >= 9 && argv[i] <= 13) || (argv[i] == 32))
+	while (ft_isspace(argv[i]))
 		i++;
 	if (argv[i] == '+' || argv[i] == '-')
 		i++;
@@ -58,6 +58,8 @@ int	check_arg(char *argv)
 			return (ft_putstr_fd("Error\n", 2), 1);
 		i++;
 	}
+	if (!ft_is_valid_int(argv))
+		return (ft_putstr_fd("Error\n", 2), 1);
 	return (0);
 }
 
