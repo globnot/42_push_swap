@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 11:36:15 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 13:33:07 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/03 13:34:31 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	swap(t_node **stack)
 	tmp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
 	(*stack)->next->value = tmp;
-
 }
 
 void	sa(t_node **stack_a)
