@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_swap.c                                  :+:      :+:    :+:   */
+/*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 11:36:15 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/03 14:45:08 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/03 13:35:22 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/03 14:45:02 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_node **stack)
+static void	push(t_node **stack_src, t_node **stack_dest)
 {
-	int	tmp;
+	t_node	*tmp;
 
-	if ((*stack == NULL) || ((*stack)->next == NULL))
+	if (*stack_src == NULL)
 		return ;
-	tmp = (*stack)->value;
-	(*stack)->value = (*stack)->next->value;
-	(*stack)->next->value = tmp;
+	tmp = *stack_src;
+	*stack_src = tmp->next;
+	tmp->next = *stack_dest;
+	*stack_dest = tmp;
 }
 
-void	sa(t_node **stack_a)
+void	pa(t_node **stack_a, t_node **stack_b)
 {
-	swap(stack_a);
-	ft_printf("sa\n");
+	push(stack_b, stack_a);
+	ft_printf("pa\n");
 }
 
-void	sb(t_node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
-	swap(stack_b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_node **stack_a, t_node **stack_b)
-{
-	swap(stack_a);
-	swap(stack_b);
-	ft_printf("ss\n");
+	push(stack_a, stack_b);
+	ft_printf("pb\n");
 }
