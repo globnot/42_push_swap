@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 11:43:01 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/04 12:31:00 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_node
 int			check_arg(char *argv);
 int			is_valid_args(int argc, char **argv);
 char		**create_args_array(int argc, char **argv);
-int			is_double_args(t_node *stack_a);
+int			count_numbers(int argc, char **argv);
 
 // PARSING UTILS
 void		free_split(char **split);
@@ -35,6 +35,7 @@ void		fill_from_argv(char **all_argc, char *argv, int *j);
 // STACK UTILS
 t_node		*init_stack_a(int argc, char **argv);
 void		free_stack(t_node *stack);
+int			is_double_args(t_node *stack_a);
 
 // OPERATIONS
 void		sa(t_node **stack_a);
