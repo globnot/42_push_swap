@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:15:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 11:20:08 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/04 13:56:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,20 @@ int	find_biggest_int(t_node **stack_a)
 		current = current->next;
 	}
 	return (biggest_int);
+}
+
+int	find_smallest_int(t_node **stack_a)
+{
+	int		smallest_int;
+	t_node	*current;
+
+	smallest_int = INT_MAX;
+	current = *stack_a;
+	while (current != NULL)
+	{
+		if (current->value < smallest_int)
+			smallest_int = current->value;
+		current = current->next;
+	}
+	return (smallest_int);
 }
