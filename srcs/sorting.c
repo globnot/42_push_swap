@@ -6,27 +6,35 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:13:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 11:28:42 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/04 13:25:42 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_node **stack_a)
+void	sort_three(t_node **stack)
 {
 	int	biggest_int;
 
-	biggest_int = find_biggest_int(stack_a);
-	if ((*stack_a)->value == biggest_int)
-		ra(stack_a);
-	else if ((*stack_a)->next->value == biggest_int)
-		rra(stack_a);
-	if ((*stack_a)->value > (*stack_a)->next->value)
-		sa(stack_a);
+	biggest_int = find_biggest_int(stack);
+	if ((*stack)->value == biggest_int)
+		ra(stack);
+	else if ((*stack)->next->value == biggest_int)
+		rra(stack);
+	if ((*stack)->value > (*stack)->next->value)
+		sa(stack);
 }
 
-// void	sort_five(t_node **stack_a)
-// {
-//
-//
-// }
+void	sort_five(t_node **stack_a, t_node **stack_b)
+{
+	// IL FAUT METTRE LES 3 PLUS GROS DANS B
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	sort_three(stack_b);
+	if ((*stack_a)->value > (*stack_a)->next->value)
+		sa(stack_a);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
+}
