@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 10:42:17 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/04 11:43:01 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		fill_from_split(char **all_args, char **split, int *j);
 void		fill_from_argv(char **all_argc, char *argv, int *j);
 
 // STACK UTILS
-t_node		*init_stack_a(char **args_array);
+t_node		*init_stack_a(int argc, char **argv);
 void		free_stack(t_node *stack);
 
 // OPERATIONS
