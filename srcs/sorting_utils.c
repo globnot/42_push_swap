@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:15:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 11:00:56 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/04 11:20:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ int	find_biggest_int(t_node **stack_a)
 
 	biggest_int = INT_MIN;
 	current = *stack_a;
-	while (current->next != NULL)
+	while (current != NULL)
 	{
 		if (current->value > biggest_int)
 			biggest_int = current->value;
 		current = current->next;
 	}
-	if (current->value > biggest_int)
-		biggest_int = current->value;
 	return (biggest_int);
 }
