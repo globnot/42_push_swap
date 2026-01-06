@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 12:42:23 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/06 13:41:20 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,6 @@ int	count_args(int argc, char **argv)
 		i++;
 	}
 	return (count_args);
-}
-
-int	count_numbers(int argc, char **argv)
-{
-	char	**args_array;
-	int		i;
-
-	args_array = create_args_array(argc, argv);
-	i = 0;
-	while (args_array[i] != 0)
-		i++;
-	return (i);
 }
 
 int	check_arg(char *argv)
@@ -101,6 +89,26 @@ int	is_valid_args(int argc, char **argv)
 		i++;
 	}
 	return (1);
+}
+
+int	is_double_args(t_node *stack_a)
+{
+	t_node	*i;
+	t_node	*j;
+
+	i = stack_a;
+	while (i != NULL)
+	{
+		j = i->next;
+		while (j != NULL)
+		{
+			if (i->value == j->value)
+				return (1);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (0);
 }
 
 char	**create_args_array(int argc, char **argv)

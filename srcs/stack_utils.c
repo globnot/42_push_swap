@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:07:05 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 12:22:10 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/06 13:41:21 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,16 @@ void	free_stack(t_node *stack)
 	}
 }
 
-int	is_double_args(t_node *stack_a)
+int	stack_size(int argc, char **argv)
 {
-	t_node	*i;
-	t_node	*j;
+	char	**args_array;
+	int		i;
 
-	i = stack_a;
-	while (i != NULL)
-	{
-		j = i->next;
-		while (j != NULL)
-		{
-			if (i->value == j->value)
-				return (1);
-			j = j->next;
-		}
-		i = i->next;
-	}
-	return (0);
+	args_array = create_args_array(argc, argv);
+	i = 0;
+	while (args_array[i] != 0)
+		i++;
+	return (i);
 }
 
 t_node	*init_stack_a(int argc, char **argv)
