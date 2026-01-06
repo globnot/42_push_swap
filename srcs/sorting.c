@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:13:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 14:38:16 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/06 14:42:06 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	sort_five(t_node **stack_a, t_node **stack_b)
 	while ((*stack_a)->value != smallest_int)
 		ra(stack_a);
 	pb(stack_a, stack_b);
-	sort_three(stack_a);
+	if (!is_sorted(stack_a))
+		sort_three(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }

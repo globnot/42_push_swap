@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 13:58:03 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/06 14:36:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void		sort_five(t_node **stack_a, t_node **stack_b);
 // SORTING UTILS
 int			find_biggest_int(t_node **stack_a);
 int			find_smallest_int(t_node **stack_a);
+int			is_sorted(t_node **stack);
 
 #endif
