@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 14:48:00 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/06 15:00:01 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	size = stack_size(stack_a);
 	if (size == 3)
 		sort_three(&stack_a);
-	if (size == 5)
+	else if (size == 5)
 		sort_five(&stack_a, &stack_b);
 	tmp = stack_a;
 	while (tmp != NULL)
