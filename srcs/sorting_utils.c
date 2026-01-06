@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:15:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/04 13:56:25 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/06 14:30:52 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,15 @@ int	find_smallest_int(t_node **stack_a)
 		current = current->next;
 	}
 	return (smallest_int);
+}
+
+int	is_sorted(t_node **stack)
+{
+	t_node	*current;
+	current = *stack;
+	while (current->next != NULL && current->value < current->next->value)
+		current = current->next;
+	if (current->next != NULL)
+		return (0);
+	return (1);
 }
