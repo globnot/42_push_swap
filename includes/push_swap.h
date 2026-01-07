@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 14:36:47 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/07 14:20:33 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct s_node
 {
 	int					value;
+	int					index;
 	struct s_node		*next;
 }	t_node;
 
