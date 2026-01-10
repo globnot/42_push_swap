@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:26:30 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 09:19:09 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 10:19:56 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	assign_index(t_node *stack)
 		compare = stack;
 		while (compare != NULL)
 		{
-			if (current->value > compare->value)
+			if (current->value < compare->value)
 				count++;
 			compare = compare->next;
 		}
