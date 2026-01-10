@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 14:25:04 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 14:33:40 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,10 @@ int	is_valid_args(int argc, char **argv)
 			if (split == NULL)
 				return (free(split), 0);
 			j = 0;
-			while (split[j])
-			{
-				if (check_arg(split[j]) == 1)
-					return (0);
+			while (split[j] && check_arg(argv[i]) == 0)
 				j++;
-			}
+			if (split[j])
+				return (free_split(split), 0);
 			free_split(split);
 		}
 		else if (check_arg(argv[i]) == 1)
