@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:26:30 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 08:49:02 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 09:16:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,19 @@ void	assign_index(t_node *stack)
 		current->index = count;
 		current = current->next;
 	}
+}
+
+int	get_max_bits(t_node *stack)
+{
+	int	biggest_index;
+	int	max_bits;
+
+	biggest_index = (stack_size(stack)) - 1;
+	max_bits = 0;
+	while (biggest_index > 0)
+	{
+		biggest_index = biggest_index / 2;
+		max_bits++;
+	}
+	return (max_bits);
 }
