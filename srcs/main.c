@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 15:00:01 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 08:52:59 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 	while (tmp != NULL)
 	{
 		ft_printf("%d\n", tmp->value);
+		ft_printf("%d\n", tmp->index);
 		tmp = tmp->next;
 	}
 	free_stack(stack_a);

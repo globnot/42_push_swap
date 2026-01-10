@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:07:05 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 14:07:11 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 08:52:13 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,7 @@ t_node	*init_stack_a(int argc, char **argv)
 		i++;
 	}
 	if (is_double_args(head))
-	{
-		ft_putstr_fd("Error\n", 2);
-		free_stack(head);
-		return (NULL);
-	}
+		return (ft_putstr_fd("Error\n", 2), free(head), NULL);
+	assign_index(head);
 	return (head);
 }
