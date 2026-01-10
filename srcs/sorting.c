@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:13:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 14:42:06 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 10:12:29 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,31 @@ void	sort_five(t_node **stack_a, t_node **stack_b)
 		sort_three(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
+}
+
+void	radix_sort(t_node **stack_a, t_node **stack_b)
+{
+	int	max_bits;
+	int	size;
+	int	i;
+	int	j;
+
+	max_bits = get_max_bits(*stack_a);
+	size = stack_size(*stack_a);
+	i = 0;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (((*stack_a)->index >> i) & 1)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+			j++;
+		}
+		while (*stack_b != NULL)
+			pa(stack_a, stack_b);
+		i++;
+	}
 }
