@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:07:05 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 11:09:34 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 13:55:22 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ t_node	*init_stack_a(int argc, char **argv)
 	new = NULL;
 	head = NULL;
 	args_array = create_args_array(argc, argv);
+	if (args_array == NULL)
+		return (ft_putstr_fd("Error\n", 2), NULL);
 	while (args_array[i])
 	{
 		new = create_node(ft_atoi(args_array[i]));
@@ -85,9 +87,7 @@ t_node	*init_stack_a(int argc, char **argv)
 		i++;
 	}
 	if (is_double_args(head))
-		return (ft_putstr_fd("Error\n", 2), free(head), free_split(args_array),
-			NULL);
-	assign_index(head);
-	free_split(args_array);
-	return (head);
+		return (ft_putstr_fd("Error\n", 2), free_stack(head),
+			free_split(args_array), NULL);
+	return (assign_index(head), free_split(args_array), head);
 }
