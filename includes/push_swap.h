@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 08:37:26 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 09:17:50 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int			is_sorted(t_node **stack);
 
 //RADIX UTILS
 void		assign_index(t_node *stack);
+int			get_max_bits(t_node *stack);
 
 #endif
