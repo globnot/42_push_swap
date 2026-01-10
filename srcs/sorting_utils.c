@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:15:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 15:00:26 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 11:04:33 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	is_sorted(t_node **stack)
 {
 	t_node	*current;
 
+	if (!*stack)
+		return (1);
 	current = *stack;
 	while (current->next != NULL && current->value < current->next->value)
 		current = current->next;
