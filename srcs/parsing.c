@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 14:05:08 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 14:25:04 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 int	count_args(int argc, char **argv)
 {
-	int		count_args;
 	int		i;
-	int		j;
+	int		count;
 	char	**split;
 
-	count_args = 0;
 	i = 1;
+	count = 0;
 	while (i < argc)
 	{
 		if ((ft_strchr(argv[i], ' ')) != NULL)
@@ -28,19 +27,14 @@ int	count_args(int argc, char **argv)
 			split = ft_split(argv[i], ' ');
 			if (split == NULL)
 				return (0);
-			j = 0;
-			while (split[j])
-			{
-				j++;
-				count_args++;
-			}
+			count = count + split_len(split);
 			free_split(split);
 		}
 		else
-			count_args++;
+			count++;
 		i++;
 	}
-	return (count_args);
+	return (count);
 }
 
 int	check_arg(char *argv)
@@ -78,7 +72,7 @@ int	is_valid_args(int argc, char **argv)
 		{
 			split = ft_split(argv[i], ' ');
 			if (split == NULL)
-				return (0);
+				return (free(split), 0);
 			j = 0;
 			while (split[j])
 			{

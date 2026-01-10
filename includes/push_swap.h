@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 10:08:22 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 14:22:22 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char		**create_args_array(int argc, char **argv);
 
 // PARSING UTILS
 void		free_split(char **split);
+int			split_len(char **split);
 void		fill_from_split(char **all_args, char **split, int *j);
 void		fill_from_argv(char **all_argc, char *argv, int *j);
 
