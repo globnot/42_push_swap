@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 14:33:40 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 14:42:59 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,12 +111,10 @@ char	**create_args_array(int argc, char **argv)
 {
 	char	**args_array;
 	char	**split;
-	int		args;
 	int		i;
 	int		j;
 
-	args = count_args(argc, argv);
-	args_array = malloc(sizeof(char *) * (args + 1));
+	args_array = malloc(sizeof(char *) * (count_args(argc, argv) + 1));
 	if (args_array == NULL)
 		return (NULL);
 	i = 1;

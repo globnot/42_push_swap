@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 12:52:50 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 14:22:03 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 14:44:23 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_split(char **split)
 	free(split);
 }
 
-int		split_len(char **split)
+int	split_len(char **split)
 {
 	int	i;
 
