@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 18:52:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/06 13:41:20 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 10:42:26 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ char	**create_args_array(int argc, char **argv)
 		{
 			split = ft_split(argv[i], ' ');
 			fill_from_split(args_array, split, &j);
-			free(split);
+			free_split(split);
 		}
 		else if (check_arg(argv[i]) == 0)
 			fill_from_argv(args_array, argv[i], &j);

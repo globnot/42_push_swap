@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 10:16:01 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 10:22:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	t_node	*stack_a;
 	t_node	*stack_b;
 	int		size;
-	t_node	*tmp;
 
 	if (argc <= 1)
 		return (ft_putstr_fd("Error\n", 2), 1);
@@ -34,12 +33,6 @@ int	main(int argc, char **argv)
 		sort_five(&stack_a, &stack_b);
 	else if (size > 5)
 		radix_sort(&stack_a, &stack_b);
-	tmp = stack_a;
-	while (tmp != NULL)
-	{
-		ft_printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
 	free_stack(stack_a);
 	return (0);
 }

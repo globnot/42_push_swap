@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 12:52:50 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/01 13:39:31 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 10:41:36 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void	fill_from_split(char **all_args, char **split, int *j)
 
 void	fill_from_argv(char **all_args, char *argv, int *j)
 {
-	all_args[*j] = argv;
+	all_args[*j] = ft_strdup(argv);
 	(*j)++;
 }
