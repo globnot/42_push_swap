@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/04 10:14:46 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/07 14:27:36 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRCS 		= srcs/main.c srcs/parsing.c srcs/stack_utils.c \
 			  srcs/parsing_utils.c srcs/operations_swap.c \
 			  srcs/operations_push.c srcs/operations_rotate.c \
 			  srcs/operations_reverse_rotate.c srcs/sorting.c \
-			  srcs/sorting_utils.c
+			  srcs/sorting_utils.c srcs/radix_utils.c
 
 # Objects
 OBJS 		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))

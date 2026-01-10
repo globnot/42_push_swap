@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:59:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/07 14:20:33 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/10 08:37:26 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ void		sort_five(t_node **stack_a, t_node **stack_b);
 int			find_biggest_int(t_node **stack_a);
 int			find_smallest_int(t_node **stack_a);
 int			is_sorted(t_node **stack);
+
+//RADIX UTILS
+void		assign_index(t_node *stack);
 
 #endif
