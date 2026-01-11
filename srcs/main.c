@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 11:05:17 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/11 09:27:07 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	main(int argc, char **argv)
 	if (is_sorted(&stack_a))
 		return (free_stack(stack_a), 0);
 	size = stack_size(stack_a);
-	if (size == 3)
+	if (size <= 3)
 		sort_three(&stack_a);
-	else if (size == 5)
+	else if (size <= 5)
 		sort_five(&stack_a, &stack_b);
 	else if (size > 5)
 		radix_sort(&stack_a, &stack_b);
