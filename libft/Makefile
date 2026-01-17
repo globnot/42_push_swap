@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/15 10:00:00 by student           #+#    #+#              #
-#    Updated: 2026/01/03 09:08:11 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/17 11:57:20 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,6 @@ INCLUDES	= -Iincludes
 
 # Directories
 OBJ_DIR		= objs
-
-# vpath for source files
-vpath %.c srcs/libft srcs/ft_printf
 
 # Sources
 SRC_LIBC	= srcs/libft/ft_isalpha.c srcs/libft/ft_isdigit.c \
@@ -70,18 +67,16 @@ SRC_PRINTF	= srcs/ft_printf/ft_printf.c srcs/ft_printf/ft_print_char.c \
 			srcs/ft_printf/ft_print_hexaupper.c \
 			srcs/ft_printf/ft_print_percent.c
 
-SRCS		= $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF)
-SRCS_ALL	= $(SRCS) $(SRC_BONUS)
+SRCS		= $(SRC_LIBC) $(SRC_ADD) $(SRC_PERSO) $(SRC_PRINTF) $(SRC_BONUS)
 
 # Objects
-OBJS		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
-OBJS_ALL	= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS_ALL:.c=.o)))
+OBJS		= $(SRCS:srcs/%.c=$(OBJ_DIR)/%.o)
 
 # Rules
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: %.c
-	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: srcs/%.c
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	@echo "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)"
 
@@ -91,15 +86,9 @@ $(NAME): $(OBJS)
 	@echo "$(GREEN)✓ $(NAME) created successfully!$(RESET)"
 	@echo "$(GREEN)==========================================$(RESET)"
 
-bonus: $(OBJS_ALL)
-	@ar rcs $(NAME) $(OBJS_ALL)
-	@echo "$(GREEN)==========================================$(RESET)"
-	@echo "$(GREEN)✓ $(NAME) created with bonus!$(RESET)"
-	@echo "$(GREEN)==========================================$(RESET)"
-
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(YELLOW)✓ Object files removed$(RESET)"
+	@echo "$(YELLOW)✓ $(NAME) Object files removed$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
@@ -107,4 +96,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

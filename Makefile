@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/07 14:27:36 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/17 11:45:55 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,6 @@ LIBFT 		= ./libft/libft.a
 # Directories
 OBJ_DIR		= objs
 
-# vpath for source files
-vpath %.c srcs/
-
 # Sources
 SRCS 		= srcs/main.c srcs/parsing.c srcs/stack_utils.c \
 			  srcs/parsing_utils.c srcs/operations_swap.c \
@@ -42,27 +39,32 @@ SRCS 		= srcs/main.c srcs/parsing.c srcs/stack_utils.c \
 			  srcs/sorting_utils.c srcs/radix_utils.c
 
 # Objects
-OBJS 		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
+OBJS 		= $(SRCS:srcs/%.c=$(OBJ_DIR)/%.o)
 
 # Rules
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: %.c
+$(LIBFT):
+	@make -C libft
+
+$(OBJ_DIR)/%.o: srcs/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	@echo "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)"
 
-$(NAME): $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 	@echo "$(GREEN)==========================================$(RESET)"
 	@echo "$(GREEN)✓ $(NAME) created successfully!$(RESET)"
 	@echo "$(GREEN)==========================================$(RESET)"
 
 clean:
+	@make clean -C libft
 	@rm -rf $(OBJ_DIR)
-	@echo "$(YELLOW)✓ Object files removed$(RESET)"
+	@echo "$(YELLOW)✓ $(NAME) Object files removed$(RESET)"
 
 fclean: clean
+	@make fclean -C libft
 	@rm -f $(NAME)
 	@echo "$(YELLOW)✓ $(NAME) removed$(RESET)"
 
