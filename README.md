@@ -1,6 +1,6 @@
 # Push_swap
 
-This project has been created as part of the 42 curriculum by aborda.
+*This project has been created as part of the 42 curriculum by aborda.*
 
 ---
 
