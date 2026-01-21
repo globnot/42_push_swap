@@ -139,4 +139,4 @@ Dans le cadre de ce projet, l'intelligence artificielle (Claude) a été utilis�
 
 ## Auteur
 
-**aborda** - École 42
+**Antoine Borda (aborda)** - École 42 Paris
