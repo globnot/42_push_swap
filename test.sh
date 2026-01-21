@@ -13,14 +13,20 @@ echo -e "${G}=======================================${NC}"
 # Test 1 : Petites tailles
 echo -e "\n${B}TESTS SIMPLES${NC}"
 
-echo -e "\n${Y}[1] Test 2 nombres${NC}"
-./push_swap 2 1 | ./checker_linux 2 1
+echo -e "\n${Y}[1] Test 2 nombres 2-1${NC}"
+OPS=$(./push_swap 2 1 | wc -l)
+RESULT=$(./push_swap 2 1 | ./checker_linux 2 1)
+echo "$OPS opérations - $RESULT"
 
-echo -e "\n${Y}[2] Test 3 nombres${NC}"
-./push_swap 3 2 1 | ./checker_linux 3 2 1
+echo -e "\n${Y}[2] Test 3 nombres 3-2-1${NC}"
+OPS=$(./push_swap 3 2 1 | wc -l)
+RESULT=$(./push_swap 3 2 1 | ./checker_linux 3 2 1)
+echo "$OPS opérations - $RESULT"
 
-echo -e "\n${Y}[3] Test 5 nombres${NC}"
-./push_swap 5 4 3 2 1 | ./checker_linux 5 4 3 2 1
+echo -e "\n${Y}[3] Test 5 nombres 5-4-3-2-1${NC}"
+OPS=$(./push_swap 5 4 3 2 1 | wc -l)
+RESULT=$(./push_swap 5 4 3 2 1 | ./checker_linux 5 4 3 2 1)
+echo "$OPS opérations - $RESULT"
 
 # Test 2 : Gestion erreurs
 echo -e "\n${B}TESTS ERREURS${NC}"

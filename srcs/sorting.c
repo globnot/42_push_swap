@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 10:13:56 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/10 10:12:29 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/21 09:33:41 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,23 @@ void	sort_three(t_node **stack)
 void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	int	smallest_int;
+	int	smallest_int_position;
+	int	i;
 
-	smallest_int = find_smallest_int(stack_a);
-	while ((*stack_a)->value != smallest_int)
-		ra(stack_a);
-	pb(stack_a, stack_b);
-	smallest_int = find_smallest_int(stack_a);
-	while ((*stack_a)->value != smallest_int)
-		ra(stack_a);
-	pb(stack_a, stack_b);
+	i = 2;
+	while (i > 0)
+	{
+		smallest_int = find_smallest_int(stack_a);
+		smallest_int_position = find_position(stack_a, smallest_int);
+		if (smallest_int_position <= stack_size(*stack_a) / 2)
+			while ((*stack_a)->value != smallest_int)
+				ra(stack_a);
+		else
+			while ((*stack_a)->value != smallest_int)
+				rra(stack_a);
+		pb(stack_a, stack_b);
+		i--;
+	}
 	if (!is_sorted(stack_a))
 		sort_three(stack_a);
 	pa(stack_a, stack_b);
