@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:57:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/11 09:27:07 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/21 09:50:05 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	int		size;
 
 	if (argc <= 1)
-		return (ft_putstr_fd("Error\n", 2), 1);
+		return (1);
 	if (!is_valid_args(argc, argv))
 		return (1);
 	stack_a = init_stack_a(argc, argv);
